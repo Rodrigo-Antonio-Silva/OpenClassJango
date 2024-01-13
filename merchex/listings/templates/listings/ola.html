@@ -1,0 +1,6 @@
+<p>Minhas bandas favoritas são:</p>
+    <ul>
+        {% for band in bands|slice:"6" %}
+            <li>{{ band.name|upper }}</li>
+        {% endfor %}
+    </ul>

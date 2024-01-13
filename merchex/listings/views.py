@@ -5,50 +5,13 @@ from listings.models import Band
 
 def hello(request):
     bands = Band.objects.all()
-    return HttpResponse(f"""
-    <html>
-        <head>
-            <title>Hello Django</title>
-        </head>
-        <body>
-            <h1>Hello Django!</h1>
-            <p>My Favorite bands are:</p>
-            <table border="1">
-                <tr>
-                    <th>Banda</th>
-                    <th>Musicas</th>
-                </tr>
-                <tr>   
-                    <th>{bands[0].name}</th>
-                    <th>{bands[6].name}</th>
-                </tr>
-                <tr>   
-                    <th>{bands[1].name}</th>
-                    <th>{bands[7].name}</th>
-                </tr>
-                <tr>   
-                    <th>{bands[2].name}</th>
-                    <th>{bands[8].name}</th>
-                </tr>
-                <tr>   
-                    <th>{bands[3].name}</th>
-                    <th>{bands[9].name}</th>
-                </tr>
-                <tr>   
-                    <th>{bands[4].name}</th>
-                    <th>{bands[10].name}</th>
-                </tr>
-                <tr>   
-                    <th>{bands[5].name}</th>
-                    <th>{bands[11].name}</th>
-                </tr>
-            </table>
-        </body>    
-    </html>""")
+    return render(request,
+                'listings/hello.html',
+                  {'bands': bands})
 
 
 def about(request):
-    return HttpResponse('<h1>About us</h1> <p>We love merch!</p>')
+    return render(request, 'listings/about.html')
 
 
 def list(request):
@@ -56,4 +19,10 @@ def list(request):
 
 
 def contact(request):
-    return HttpResponse('<p>Tel: 555-5555</h1>')
+    return render(request, 'listings/contact.html')
+
+
+def ola(request):
+    bands = Band.objects.all()
+    return render(request, 'listings/ola.html',
+                  {'bands': bands})
