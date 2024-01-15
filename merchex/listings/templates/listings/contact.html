@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head><title>Contact</title></head>
-    <body>
-        <header>
-            <h1>Entre em Contato</h1>
-        </header>
-        <main>
-            <form>
-                <label>Nome:</label>
-                <input type="text", name="name"><br><br>
-                <label>Email:</label>
-                <input type="text", name="email"><br><br>
+{% extends 'listings/base.html' %}
 
-                <label>Assunto:</label>
-                <input type="text", name="assunto"><br><br>
+{% block content %}
 
-                <label>Menssagem:</label>
-                <input type="text", name="menssagem"><br><br>
+<header>
+    <h1>Entre em Contato</h1>
+</header>
+<main>
+    <form>
+        <label>Nome:</label>
+        <input type="text", name="name"><br><br>
+        <label>Email:</label>
+        <input type="text", name="email"><br><br>
 
-                <button>Enviar menssagem</button>
-            </form>
-        </main>
-    </body>
-</html>
+        <label>Assunto:</label>
+        <input type="text", name="assunto"><br><br>
+
+        <label>Menssagem:</label>
+        <input type="text", name="menssagem"><br><br>
+
+        <button>Enviar menssagem</button>
+    </form>
+</main>
+
+{% endblock %}
