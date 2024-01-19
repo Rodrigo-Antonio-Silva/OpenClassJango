@@ -1,0 +1,12 @@
+{% extends 'listings/base.html'  %}
+
+{% block content %}
+
+<p>Meus musicos favoritos são:</p>
+<ul>
+    {% for singer in singers %}
+        <li>{{singer.name|upper}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

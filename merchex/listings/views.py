@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from listings.models import Band
+from listings.models import Band, Singers
 
 
 def hello(request):
@@ -14,8 +14,11 @@ def about(request):
     return render(request, 'listings/about.html')
 
 
-def list(request):
-    return HttpResponse('<ul>Bandas<il>Foo fighters</il><il>Metallica</il></ul>')
+def singer(request):
+    singers = Singers.objects.all()
+    return render(request,
+                  'listings/singer.html',
+                  {'singers': singers})
 
 
 def contact(request):
