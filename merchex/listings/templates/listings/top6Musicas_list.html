@@ -1,0 +1,13 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<p>O Top 6 das minhas musicas são:</p>
+    <ul>
+        {% for title in bands|slice:"6" %}
+            <li>{{title.title|upper}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+

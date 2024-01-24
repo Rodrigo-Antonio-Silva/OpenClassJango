@@ -1,0 +1,23 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+ <nav>
+     <a href="{% url 'music-list' %}">Musics</a>
+ </nav>
+
+<h2>{{ music.title }}</h2>
+
+<ul>
+ <li>Genre: {{ music.get_genre_display }}</li>
+ <li>Year formed: {{ music.year_formed }}</li>
+ <li>Active: {{ music.active|yesno }}</li>
+ {% if music.official_homepage %}
+ <li><a href="{{ music.official_homepage }}">{{ music.official_homepage }}</a></li>
+ {% endif %}
+</ul>
+
+<p>{{ music.description}}</p>
+
+<a href="{% url 'music-list' %}">Back to all musics</a>
+
+{% endblock %}

@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<p>Meus musicos favoritos são:</p>
+<p>Meus Cantores favoritos são:</p>
 <ul>
     {% for singer in singers %}
-        <li>{{singer.name|upper}}</li>
+        <li><a href="{% url 'singer-detail' singer.id %}">{{singer.name}}</a></li>
     {% endfor %}
 </ul>
 
