@@ -1,20 +1,38 @@
 {% extends 'listings/base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<h1>ABOUT US</h1>
-    <h5 style="font:bold">Nossa Missão:</h5>
-    <p>nossa missão é impulsionar a indústria da música por meio da inovação tecnológica.
-Somos uma startup dedicada à criação de aplicativos revolucionários, projetados
-para aprimorar a experiência musical de artistas, produtores, e amantes da música em todo o mundo.</p>
-    <h5 style="font:bold">Nosso Compromisso:</h5>
-    <p>Em um mundo onde a música é uma linguagem universal, acreditamos que a tecnologia pode desempenhar um papel fundamental na criação,
-produção e compartilhamento de obras incríveis. Na [Nome da Sua Empresa],
-estamos comprometidos em oferecer soluções tecnológicas que capacitam artistas a alcançar novas alturas criativas,
-produtores a simplificar seus fluxos de trabalho e fãs a se envolverem mais profundamente com a música que amam.</p>
-    <h5 style="font:bold">O Que Fazemos:</h5>
-    <p>Nossos aplicativos são desenvolvidos com a mais recente tecnologia para atender às demandas em constante evolução da indústria da música.
-Desde plataformas inovadoras de criação musical até ferramentas avançadas de gestão de produção,
-trabalhamos incansavelmente para fornecer soluções que promovam a expressão artística e otimizem processos.</p>
-
+<div class="section">
+    <div class="container">
+        <div class="content-section">
+            <div class="title">
+                <h1>ABOUT US</h1>
+            </div>
+                <div class="content">
+                    <h3>[nome da página web] </h3>
+                    <p>é uma página web que lista músicas e artistas de todo o mundo.
+                        Nosso objetivo é proporcionar aos nossos usuários uma experiência completa e informativa sobre a música.
+                        Nossa equipe é formada por apaixonados por música, que acreditam que a música é uma forma de arte poderosa
+                        que pode unir as pessoas. Estamos comprometidos em fornecer aos nossos usuários as informações mais precisas e atualizadas sobre música.
+                        Oferecemos uma variedade de recursos para nossos usuários, incluindo: Uma lista abrangente de músicas e artistas
+                        Informações detalhadas sobre cada música e artista Notícias e atualizações sobre música Ferramentas para ajudar os usuários a encontrar música que gostem
+                        Estamos sempre trabalhando para melhorar nossa página web e oferecer aos nossos usuários a melhor experiência possível. Se você tiver algum feedback, não hesite em nos contatar.
+                        Obrigado por visitar a [nome da página web]!</p>
+                    <div class="button">
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+                <div class="social">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-X"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="{% static 'listings/audience-img.jpg' %}" alt="Imagem">
+            </div>
+        </div>
+</div>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>Hello Django!</h1>
-<p>My Favorite musics are:</p>
+<h3>My Favorite musics are:</h3>
 <ul>
     {% for title in bands %}
         <li><a href="{% url 'music-detail' title.id %}">{{title.title}}</a></li>

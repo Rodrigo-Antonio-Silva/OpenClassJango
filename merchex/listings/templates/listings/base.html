@@ -7,7 +7,12 @@
         <link rel="stylesheet" href="{% static 'listings/styles.css' %}"/>
     </head>
     <body>
-
+        <nav>
+             <a href="{% url 'music-list' %}">Musics</a>
+             <a href="{% url 'singer-list' %}">Singers</a>
+             <a href="{% url 'contact' %}">Contact</a>
+             <a href="{% url 'about' %}">About</a>
+         </nav>
         {% block content %}{% endblock %}
 
     </body>

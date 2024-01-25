@@ -6,19 +6,10 @@
     <h1>Entre em Contato</h1>
 </header>
 <main>
-    <form>
-        <label>Nome:</label>
-        <input type="text", name="name"><br><br>
-        <label>Email:</label>
-        <input type="text", name="email"><br><br>
-
-        <label>Assunto:</label>
-        <input type="text", name="assunto"><br><br>
-
-        <label>Menssagem:</label>
-        <input type="text", name="menssagem"><br><br>
-
-        <button>Enviar menssagem</button>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit", value="Submit">
     </form>
 </main>
 

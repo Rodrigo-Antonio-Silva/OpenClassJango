@@ -1,8 +1,8 @@
 {% extends 'listings/base.html'  %}
 
 {% block content %}
-
-<p>Meus Cantores favoritos são:</p>
+<h1> Hello Django!</h1>
+<h3>Meus Cantores favoritos são:</h3>
 <ul>
     {% for singer in singers %}
         <li><a href="{% url 'singer-detail' singer.id %}">{{singer.name}}</a></li>
