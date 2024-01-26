@@ -6,7 +6,10 @@
 <h3>Meus Cantores favoritos são:</h3>
 <ul>
     {% for singer in singers %}
-        <li><a href="{% url 'singer-detail' singer.id %}">{{singer.name}}</a></li>
+        <li>
+            <a href="{% url 'singer-detail' singer.id %}">{{singer.name}}</a>
+            - <a href="{% url 'singer-change' singer.id %}">[edit]</a>
+        </li>
     {% endfor %}
 </ul>
 

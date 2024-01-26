@@ -95,3 +95,34 @@ def singer_create(request):
     return render(request,
                   'listings/singer_create.html',
                   {'form2': form2})
+
+
+def music_change(request, id):
+    music = Band.objects.get(id= id)
+    if request.method == 'POST':
+        form = MusicForm(instance=music)
+        if form.is_valid():
+            form.save()
+            return redirect('music-detail', music.id)
+    else:
+        form = MusicForm(instance=music)
+
+    return render(request,
+                  'listings/music_change.html',
+                  {'form': form})
+
+
+def singer_change(request, id):
+    singer = Singers.objects.get(id= id)
+    if request.method == 'POST':
+        form2 = SingerForm(instance=singer)
+        if form2.is_valid():
+            form2.save()
+            return redirect('singer-detail', singer.id)
+    else:
+        form2 = SingerForm(instance=singer)
+
+    return render(request,
+                  'listings/singer_change.html',
+                  {'form2': form2})
+
