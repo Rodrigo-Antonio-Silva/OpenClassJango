@@ -24,6 +24,7 @@ urlpatterns = [
     path('music/<int:id>/', views.music_detail, name='music-detail'),
     path('music/add/', views.music_create, name='music-create'),
     path('music/<int:id>/change/', views.music_change, name='music-change'),
+    path('music/<int:id>/delete/', views.music_delete, name='music-delete'),
     path('about-us/', views.about, name='about'),
     path('contact-us/', views.contact, name='contact'),
     path('top6musics/', views.top6Musicas_list),
@@ -31,5 +32,6 @@ urlpatterns = [
     path('singer/<int:id>/', views.singer_detail, name='singer-detail'),
     path('singer/add/', views.singer_create, name='singer-create'),
     path('singer/<int:id>/change/', views.singer_change, name='singer-change'),
+    path('singer/<int:id>/delete', views.singer_delete, name='singer-delete'),
     path('contact-us/email-sent/', views.emailsent, name='email-sent'),
 ]

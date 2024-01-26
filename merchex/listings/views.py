@@ -126,3 +126,25 @@ def singer_change(request, id):
                   'listings/singer_change.html',
                   {'form2': form2})
 
+
+def music_delete(request, id):
+    music = Band.objects.get(id=id)
+    if request.method == 'POST':
+        music.delete()
+        return redirect('music-list')
+
+    return render(request,
+                  'listings/music_delete.html',
+                  {'music': music})
+
+
+def singer_delete(request, id):
+    singer = Singers.objects.get(id=id)
+    if request.method == 'POST':
+        singer.delete()
+        return redirect('singer-list'
+                        )
+    return render(request,
+                  'listings/singer_delete.html',
+                  {'singer': singer})
+
