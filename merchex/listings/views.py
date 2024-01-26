@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from listings.models import Band, Singers
-from listings.forms import ContactUsForm
+from listings.forms import ContactUsForm, MusicForm, SingerForm
 from django.core.mail import send_mail
 
 
@@ -66,3 +66,32 @@ def top6Musicas_list(request):
 
 def emailsent(request):
     return render(request, 'listings/send_email.html')
+
+
+def music_create(request):
+    if request.method == 'POST':
+        form = MusicForm(request.POST)
+        if form.is_valid():
+            music = form.save()
+            return redirect('music-detail', music.id)
+
+    else:
+        form = MusicForm()
+
+    return render(request,
+                  'listings/music_create.html',
+                  {'form': form})
+
+
+def singer_create(request):
+    if request.method == 'POST':
+        form2 = SingerForm(request.POST)
+        if form2.is_valid():
+            singer = form2.save()
+            return redirect('singer-detail', singer.id)
+    else:
+        form2 = SingerForm()
+
+    return render(request,
+                  'listings/singer_create.html',
+                  {'form2': form2})

@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1> Hello Django!</h1>
+<a href="{% url 'singer-create' %}">Create a new singer</a>
 <h3>Meus Cantores favoritos são:</h3>
 <ul>
     {% for singer in singers %}

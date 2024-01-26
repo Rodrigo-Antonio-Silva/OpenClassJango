@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>Hello Django!</h1>
+<a href="{% url 'music-create' %}">Create a new music</a>
 <h3>My Favorite musics are:</h3>
 <ul>
     {% for title in bands %}
